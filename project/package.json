@@ -10,10 +10,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-native-camera-roll/camera-roll": "^5.1.0",
+    "@react-native-firebase/app": "^16.4.6",
+    "@react-native-firebase/firestore": "^16.4.6",
+    "@react-navigation/bottom-tabs": "^6.4.3",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
     "fbjs": "^3.0.4",
+    "install": "^0.13.0",
     "react": "17.0.2",
     "react-native": "0.68.2",
     "react-native-camera": "3.44.3",

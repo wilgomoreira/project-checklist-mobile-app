@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -51,7 +52,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
  *
  *   // where to put the JS bundle asset in debug mode
  *   jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
- *
+ *apply
  *   // where to put the JS bundle asset in release mode
  *   jsBundleDirRelease: "$buildDir/intermediates/assets/release",
  *

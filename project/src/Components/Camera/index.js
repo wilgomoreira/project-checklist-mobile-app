@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from 'react'
 import { View, Text, StyleSheet, StatusBar, TouchableOpacity, Modal, Image, PermissionsAndroid, Platform } from "react-native";
-
 
 import { RNCamera } from 'react-native-camera'
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 import { launchImageLibrary } from 'react-native-image-picker';
+
+import { ChecklistContext } from '../../contexts/ChecklistContext';
+import firestore from '@react-native-firebase/firestore';
 
 
 export default function Camera({ route }) {
@@ -13,8 +15,8 @@ export default function Camera({ route }) {
   const [open, setOpen] = useState(false);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
 
-  const { getUri } = route.params;
-
+  const { photos, setPhotos } = useContext(ChecklistContext)
+  const { index } = route.params;
 
   async function hasAndroidPermission() {
     const permission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
@@ -34,13 +36,13 @@ export default function Camera({ route }) {
   }
 
   async function takePicture(camera) {
-    const options = { quality: 0.5, base64: true }
+    const options = { quality: 0.5, base64: true}
     const data = await camera.takePictureAsync(options);
 
     setCapturedPhoto(data.uri)
     setOpen(true);
     savePicture(data.uri)
-    getUri(data.uri)
+    photoInHomeAndSalveDatabase(data.uri)
   }
 
   async function savePicture(data) {
@@ -50,8 +52,6 @@ export default function Camera({ route }) {
 
     CameraRoll.save(data, 'photo')
       .then((res) => {
-        alert('Salved')
-
       })
       .catch((erro) => console.log('Erro em algo ' + erro))
   }
@@ -65,7 +65,6 @@ export default function Camera({ route }) {
     };
 
     launchImageLibrary(options, (response) => {
-
       if (response.didCancel) {
         console.log("Cancel search for photo");
       } else if (response.error) {
@@ -73,10 +72,33 @@ export default function Camera({ route }) {
       } else {
         setCapturedPhoto(response.assets[0].uri);
         setOpen(true);
-        getUri(response.assets[0].uri);
+        photoInHomeAndSalveDatabase(response.assets[0].uri)
       }
-
     })
+  }
+
+  function photoInHomeAndSalveDatabase(uri){
+    let newPhotos = photos
+    newPhotos[index] = uri
+
+    setPhotos(() => [...newPhotos])
+    salvePhotoDatabase(uri)
+  }
+
+  async function salvePhotoDatabase(newPhoto) {
+    let idPhoto
+
+    await firestore().collection('Checklist').orderBy('createdAt', 'asc').get()
+        .then(querySnapshot => {
+            idPhoto = querySnapshot?.docs[index].id
+        });
+
+    await firestore().collection('Checklist').doc(idPhoto).update({
+        photo: newPhoto
+    })
+        .then(() => {
+            console.log('Photo Salved!');
+        });
   }
 
   return (
@@ -128,7 +150,7 @@ export default function Camera({ route }) {
 
       {capturedPhoto &&
         <Modal animationType="slide" transparent={false} visible={open}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <TouchableOpacity style={{ marginBottom: 10 }} onPress={() => setOpen(false)}>
               <Text style={{ fontSize: 24 }}> CLOSE </Text>
             </TouchableOpacity>

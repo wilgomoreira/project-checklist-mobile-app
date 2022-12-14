@@ -53,6 +53,10 @@ export const ChooseText = styled.Text`
 	font-size: 14px;
 	color: #000;
 	text-align: center;
+	font-weight: bold;
+	background-color: #fff;
+	border-radius: 5px;
+	margin-top: 10px;
 `;
 
 export const ObsArea = styled.View`

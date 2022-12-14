@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "704221880753",
+    "project_id": "equipament-checklist",
+    "storage_bucket": "equipament-checklist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704221880753:android:f2259bf131745fa1e45d90",
+        "android_client_info": {
+          "package_name": "com.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704221880753-p8i5fobmjuvmful2bchgo681rsn0o7pt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8c70lNnOQeSgwSJRjrakNVxqRyExblOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704221880753-p8i5fobmjuvmful2bchgo681rsn0o7pt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

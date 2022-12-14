@@ -1,31 +1,57 @@
-import * as React from 'react';
+import React from "react";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import StackRoutes from "./StackRoutes";
+import Feather from 'react-native-vector-icons/Feather'
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Questions from "../pages/Questions";
+import Pdf from "../pages/Pdf";
 
-import Home from '../pages/Home';
-import Camera from '../Components/Camera'
 
 export default function Routes() {
-    const Stack = createNativeStackNavigator();
+    const Tab = createBottomTabNavigator();
 
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen
-                    name='Home' component={Home}
+            <Tab.Navigator
+                screenOptions={{
+                    headerShown: false,
+                    tabBarHideOnKeyboard: true,
+                    tabBarShowLabel: false,
+                    tabBarActiveTintColor: '#FFF',
+
+                    tabBarStyle: {
+                        backgroundColor: "#1B2B42"
+                    }
+                }}
+            >
+                <Tab.Screen
+                    name='Home'
+                    component={StackRoutes}
                     options={{
-                        title: 'Tela Inicio',
-                        headerShown: false
+                        tabBarIcon: ({ color, size }) => {
+                            return <Feather name='check-circle' color={color} size={size} />
+                        }
                     }}
                 />
-                <Stack.Screen
-                    name='Camera' component={Camera}
+                <Tab.Screen
+                    name='Questions'
+                    component={Questions}
                     options={{
-                        title: 'Back',
-                        headerShown: true
+                        tabBarIcon: ({ color, size }) => {
+                            return <Feather name='list' color={color} size={size} />
+                        }
                     }}
                 />
-            </Stack.Navigator>
+                <Tab.Screen
+                    name='Pdf'
+                    component={Pdf}
+                    options={{
+                        tabBarIcon: ({ color, size }) => {
+                            return <Feather name='file-text' color={color} size={size} />
+                        }
+                    }}
+                />
+            </Tab.Navigator>
         </NavigationContainer>
-    );
+    )
 }
