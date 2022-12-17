@@ -4,7 +4,7 @@ import StackRoutes from "./StackRoutes";
 import Feather from 'react-native-vector-icons/Feather'
 import { NavigationContainer } from '@react-navigation/native';
 import Questions from "../pages/Questions";
-import Pdf from "../pages/Pdf";
+import Print from '../pages/Print'
 
 
 export default function Routes() {
@@ -43,8 +43,8 @@ export default function Routes() {
                     }}
                 />
                 <Tab.Screen
-                    name='Pdf'
-                    component={Pdf}
+                    name='Print'
+                    component={Print}
                     options={{
                         tabBarIcon: ({ color, size }) => {
                             return <Feather name='file-text' color={color} size={size} />

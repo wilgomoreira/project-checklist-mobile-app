@@ -142,11 +142,11 @@ export default function Camera({ route }) {
         }
       </RNCamera>
 
-      <View style={styles.camPosition}>
+      {/* <View style={styles.camPosition}>
         <TouchableOpacity onPress={toggleCam}>
           <Text> CHANGE </Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       {capturedPhoto &&
         <Modal animationType="slide" transparent={false} visible={open}>

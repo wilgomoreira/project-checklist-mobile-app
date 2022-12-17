@@ -125,7 +125,7 @@ export default function Questions() {
     <Container>
       <TitleArea>
         <Logo>Checklist Questions </Logo>
-        <Title>Questions</Title>
+        <Title>Question: </Title>
         <Input
           autoCapitalize="none"
           autoCorrect={false}

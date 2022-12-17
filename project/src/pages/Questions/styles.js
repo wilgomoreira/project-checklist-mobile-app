@@ -14,14 +14,14 @@ export const TitleArea = styled.View`
 `;
 
 export const Logo = styled.Text`
-    font-size: 35px;
+    font-size: 27px;
     text-align: center;
     color: #1B2B42;
     font-weight: bold;
 `;
 
 export const Title = styled.Text`
-    font-size: 22px;
+    font-size: 17px;
     margin-left: 15px;
     margin-top: 10px;
     color: #1B2B42;
