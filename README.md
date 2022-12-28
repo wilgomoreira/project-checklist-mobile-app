@@ -1,6 +1,6 @@
 # project-equipament-checklist
 
-### version 1.0
+# version 1.0
 
 ## Functionalities:
  - App to make a checklist of any equipment, machine, etc.
@@ -28,65 +28,75 @@
 - Scroll View
 - Styled Components
 
+<br/>
+
+# version 2.0
+
+### Main changes:
+- Database Change: Changed from external Firebase to Asyncstorage, internal to mobile. Makes more sense for the type of work that will be done by the person using the checklist
+- The photos inverted 90º:  The photos taken by the camera were coming out inverted in 90º when put to print. This was fixed.
+
+<br/>
+
 ## Images:
 
 ### Checklist Screen
 
-![alt text](/project/src/assets/screen0.jpeg)
+![alt text](v1.0/project/src/assets/screen0.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Checklist Screen
 
-![alt text](/project/src/assets/screen2.jpeg)
+![alt text](v1.0/project/src/assets/screen2.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Checklist Screen
 
-![alt text](/project/src/assets/screen3.jpeg)
+![alt text](v1.0/project/src/assets/screen3.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Checklist Screen
 
-![alt text](/project/src/assets/screen4.jpeg)
+![alt text](v1.0/project/src/assets/screen4.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Checklist Questions Screen
 
-![alt text](/project/src/assets/screen5.jpeg)
+![alt text](v1.0/project/src/assets/screen5.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Printer Screen
 
-![alt text](/project/src/assets/screen6.jpeg)
+![alt text](v1.0/project/src/assets/screen6.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Printer Screen
 
-![alt text](/project/src/assets/screen7.jpeg)
+![alt text](v1.0/project/src/assets/screen7.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Printer Screen
 
-![alt text](/project/src/assets/screen8.jpeg)
+![alt text](v1.0/project/src/assets/screen8.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Pdf File in Mobile
 
-![alt text](/project/src/assets/screen9.jpeg)
+![alt text](v1.0/project/src/assets/screen9.jpeg)
 <br/>
 
 ---------------------------------------------------------------------------------------
 ### Pdf opened
 
-![alt text](/project/src/assets/screen10.jpeg)
+![alt text](v1.0/project/src/assets/screen10.jpeg)
 <br/>
 
 
